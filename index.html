@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Carga Crítica de Pandeo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <h2>Calculadora de Carga Crítica de Pandeo</h2>
+    <button id="toggleInfo" onclick="toggleInfo()">Mostrar Conceptos</button>
+    <div class="conceptos" id="conceptos">
+      <p><strong>Módulo de Elasticidad (E):</strong> El módulo de elasticidad del material. Se mide en unidades de presión.</p>
+      <p><strong>Momento de Inercia (I):</strong> El momento de inercia de la sección transversal de la viga. Se mide en unidades de longitud elevado a la cuarta potencia.</p>
+      <p><strong>Longitud Efectiva (L):</strong> La longitud efectiva del elemento estructural. Se mide en unidades de longitud.</p>
+      <p><strong>Factor de Longitud Efectiva (K):</strong> El factor de longitud efectiva que tiene en cuenta las condiciones de extremo del elemento estructural.</p>
+    </div>
+    <div class="variable">
+      <label for="moduloE">Módulo de Elasticidad (E):</label>
+      <input type="number" id="moduloE" placeholder="Ingrese el módulo de elasticidad">
+    </div>
+    <div class="variable">
+      <label for="momentoI">Momento de Inercia (I):</label>
+      <input type="number" id="momentoI" placeholder="Ingrese el momento de inercia">
+    </div>
+    <div class="variable">
+      <label for="longitudL">Longitud Efectiva (L):</label>
+      <input type="number" id="longitudL" placeholder="Ingrese la longitud efectiva">
+    </div>
+    <div class="variable">
+      <label for="factorK">Factor de Longitud Efectiva (K):</label>
+      <input type="number" id="factorK" placeholder="Ingrese el factor de longitud efectiva">
+    </div>
+    <div class="buttons">
+      <button onclick="calcularPandeo()">Calcular Carga Crítica de Pandeo</button>
+      <button onclick="resetear()">Restablecer</button>
+    </div>
+    <div id="resultado"></div>
+    <div class="grafico" id="grafico">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
